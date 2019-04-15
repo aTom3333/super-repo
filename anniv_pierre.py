@@ -1,2 +1,2 @@
 import requests
-print(''.join([chr(sum([sum([ord(a) for a in b]) for b in requests.get(lol)]) % 256) for lol in ['http://83.152.244.50/']]))
+print(''.join([requests.get(a.split()[0]).text[int(a.split()[1])] for a in requests.get('http://83.152.244.50/clubinfo/list').text.split("\n") if a != '']))
